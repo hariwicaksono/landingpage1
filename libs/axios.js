@@ -1,23 +1,13 @@
 import Axios from 'axios'
 
-const RootPath = "http://localhost/blogapp-server/api/"
-
-// Authorization
-//const username = 'admin'
-//const password = '1234'
-//const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
+const RootPath = "/api/"
 
 var key = new Buffer.from('YmxvZzEyMw==', 'base64')
 const ApiKey = key.toString();
 
 const GET = (path) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.get(RootPath+path, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.get(RootPath+path).then(res => {
             resolve(res.data)
         }).catch(err => {
             reject(err)
@@ -28,12 +18,7 @@ const GET = (path) => {
 
 const GET_ID = (path,id) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.get(RootPath+path+id, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.get(RootPath+path+id).then(res => {
             resolve(res.data)
         }).catch(err => {
             reject(err)
@@ -44,12 +29,7 @@ const GET_ID = (path,id) => {
 
 const GET_BY_ID = (path,data) =>{
     const promise = new Promise((resolve,reject)=>{
-         Axios.get(RootPath+path+data, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res=>{
+         Axios.get(RootPath+path+data).then(res=>{
              resolve(res.data)
          },err=>{
             console.log(err.response); 
@@ -61,12 +41,7 @@ const GET_BY_ID = (path,data) =>{
 
 const POST = (path,data) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.post(RootPath+path,data, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.post(RootPath+path,data).then(res => {
             resolve(res.data)
         }).catch(err => {
             reject(err)
@@ -77,12 +52,7 @@ const POST = (path,data) => {
 
 const PUT = (path,data) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.put(RootPath+path,data, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.put(RootPath+path,data).then(res => {
             resolve(res.data)
         }).catch(err => {
             reject(err)
@@ -93,12 +63,7 @@ const PUT = (path,data) => {
 
 const DELETE = (path,data) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.delete(RootPath+path+data, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.delete(RootPath+path+data).then(res => {
             resolve(res.data)
         }).catch(err => {
             reject(err)
@@ -109,12 +74,7 @@ const DELETE = (path,data) => {
 
 const SEARCH = (path,data) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.get(RootPath+path+data, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res => {
+        Axios.get(RootPath+path+data).then(res => {
             resolve(res.data)
         }).catch(er => {
             reject(er)
@@ -127,12 +87,7 @@ const POST_FOTO = (path,data,name) => {
     const promise = new Promise((resolve,reject)=>{
         const formdata = new FormData()
         formdata.append('foto',data,name)
-        Axios.post(RootPath+path,formdata, {
-            headers: {
-           //'Authorization': `basic ${token}`,
-           'X-API-KEY': `${ApiKey}`
-          },
-          }).then(res=>{
+        Axios.post(RootPath+path,formdata).then(res=>{
            resolve(res.data.status)
        },(err)=>{
            reject(err)
@@ -141,8 +96,8 @@ const POST_FOTO = (path,data,name) => {
     return promise
 }
 
-const PostLogin = (data) => POST('LoginController',data);
-const GetBlog = () => GET('BlogController');
+const GetData = () => GET('landingData');
+
 const GetBlogId = (data) => GET_ID('BlogController?id=',data)
 const PostBlog = (data) => POST('BlogController',data);
 const PutBlog = (data) => PUT('BlogController',data);
@@ -179,8 +134,7 @@ const PutComment = (data) => PUT('CommentController',data);
 const CountComment = () => GET('CountCommentController');
 
 const API = {
-    PostLogin,
-    GetBlog,
+    GetData,
     GetBlogId,
     PostBlog,
     PutBlog,

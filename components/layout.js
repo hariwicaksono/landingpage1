@@ -7,8 +7,8 @@ import Link from 'next/link';
 //import { Container } from 'react-bootstrap';
 //import {isLogin, isAdmin} from '../libs/utils';
 
-export const siteName = 'Landing Page'
-export const siteTitle = 'Landing Page App #1'
+export const siteName = 'PleciPro'
+export const siteTitle = 'PleciPro'
 
 class Layout extends Component {
 
@@ -25,7 +25,6 @@ class Layout extends Component {
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
 
-    <div>
     {!home ? 
     <>
     <Link href="/" passHref>
@@ -38,7 +37,7 @@ class Layout extends Component {
       {children}
     </>
     }
-    </div>
+
     </>
   );
   }

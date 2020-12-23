@@ -5,12 +5,14 @@ export default (req, res) => {
   res.json({ status: '1',
   data: [
     {
-      "Header": {
-  
-          "title": "We are a Landing Page",
-          "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
-  
-      },
+    "Navbar": {
+        "brand": "PleciPro",
+        "wa": "6282136091613"
+    },
+    "Intro": {
+        "title": "Kami adalah PleciPro",
+        "paragraph": "Menyediakan Bahan dan Gacoran khusus Burung Pleci (Zosterops)"
+    },
       "About": {
           "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "Why": [
@@ -26,7 +28,7 @@ export default (req, res) => {
               "Lorem ipsum dolor"
           ]
       },
-      "Services": [{
+      "Layanan": [{
               "icon": "fa fa-wordpress",
               "name": "Lorem ipsum dolor",
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
@@ -45,19 +47,7 @@ export default (req, res) => {
               "icon": "fa fa-language",
               "name": "Consectetur adipiscing",
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-          },
-          {
-              "icon": "fa fa-plane",
-              "name": "Lorem ipsum dolor",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-          },
-          {
-              "icon": "fa fa-pie-chart",
-              "name": "Consectetur adipiscing",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
           }
-  
-  
       ],
       "Testimonials": [{
               "img": "img/testimonials/01.jpg",
