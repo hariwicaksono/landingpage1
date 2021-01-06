@@ -31,13 +31,38 @@ class Index extends Component{
   }
   render(){
     const settings = {
-      className: "center",
       centerMode: true,
-      infinite: true,
-      centerPadding: "60px",
-      slidesToShow: 2,
+      centerPadding: '200px',
+      slidesToShow: 1,
       autoplay: true,
-      speed: 500
+      autoplaySpeed: 6000,
+      arrows: false,
+      responsive: [
+          {
+              breakpoint: 992,
+              settings: {
+                  centerMode: true,
+                  centerPadding: '160px',
+                  slidesToShow: 1
+              }
+          },
+          {
+              breakpoint: 768,
+              settings: {
+                  centerMode: true,
+                  centerPadding: '80px',
+                  slidesToShow: 1
+              }
+          },
+          {
+              breakpoint: 576,
+              settings: {
+                  centerMode: true,
+                  centerPadding: '20px',
+                  slidesToShow: 1
+              }
+          }
+      ]
     };
     return(
     <Layout home>
@@ -50,29 +75,21 @@ class Index extends Component{
       <Layanan data={this.state.Layanan}/>
 
         <Container>
+        
       <Slider {...settings}>
-          <div>
-            <h3>1</h3>
+  
+        <div>
+            <img className="slick-image mx-xl-2 mx-lg-2 mx-md-2 mx-sm-1 mx-1 rounded" src="https://api.ternaknesia.com/storage/master/app_slider/PDgiXl8HJQzfb5JH25DE.jpeg" alt="" />
+            </div>
+            <div>
+            <img className="slick-image mx-xl-2 mx-lg-2 mx-md-2 mx-sm-1 mx-1 rounded" src="https://api.ternaknesia.com/storage/master/app_slider/J309o7XSPdrGSqsKmWrb.jpg" alt="" />
+            </div>   
+            <div>
+          <img className="slick-image mx-xl-2 mx-lg-2 mx-md-2 mx-sm-1 mx-1 rounded" src=" https://api.ternaknesia.com/storage/master/app_slider/z5BgfVbKY2aCkchT5EWq.jpg" alt="" /> 
           </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-          <div>
-            <h3>7</h3>
-          </div>
+        
         </Slider>
+      
         </Container>
     <div className="gradient-overlay-half-primary-v1">
       <div className="bg-img-hero">

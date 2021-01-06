@@ -1,11 +1,12 @@
 .slick-prev:before, .slick-next:before {
     color: #09529b !important;
-  }
-  
-  .slick-prev {
+}
+.slick-prev {
     z-index: 1;
-  }
-  .slick-next {
+}
+.slick-next {
     z-index: 1;
-  }
-  svg{margin-bottom: -3px !important;}
+}
+.slick-image {min-height: 100px; max-width: 700px}
+
+svg{margin-bottom: -3px !important;}
